@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADITYA YADUVANSHI</title> 
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: white;
+      font-size: 16px;
+      font-family: 'Arvo', serif;
+      color: black;
+    }
+    a {
+      text-decoration: none;
+    }
+    header, main, footer {
+      padding: 10px;
+      border: 1px solid black;
+    }
+    section, nav, footer div {
+      padding: 10px;
+      border: 1px solid black;
+    }
+    header, footer {
+      display: grid;
+      align-items: center;
+    }
+    header div {
+      margin: 2px 0 2px 0;
+    }
+    nav {
+      display: none;
+    }
+    nav > div {
+      background: rgb(0,0,0);
+      opacity: 80%;
+    }
+    nav > div ul {
+      list-style: none;
+    }
+    nav > div ul li {
+      display: flex;
+      justify-content: center;
+    }
+    nav > div ul li a {
+      border-bottom: 1px solid white;
+      border-top: 1px solid white;
+      width: 100%;
+      text-align: center;
+      padding: 5px;
+      color: white;
+    }
+    nav > div ul li:hover > a {
+      border-color: white;
+      background: chocolate;
+    }
+    #menu-btn {
+      width: 50px;
+      height: 45px;
+      display: grid;
+      border: 2px solid rgb(100,100,100);
+      align-items: center;
+      border-radius: 5px;
+      padding: 5px;
+    }
+    #menu-btn:hover {
+      border: 2px solid black;
+    }
+    #menu-btn:hover .bar {
+      background: black;
+    }
+    #menu-btn .bar {
+      background: rgb(100,100,100);
+      height: 3px;
+    }
+    .open .bar1{
+      animation: arrow-turn-down 0.6s forwards;
+    }
+    .open .bar2{
+      animation: arrow-turn-short 0.6s forwards;
+    }
+    .open .bar3{
+      animation: arrow-turn-up 0.6s forwards;
+    }
+    .close .bar1{
+      animation: back-to-normal 0.6s forwards;
+    }
+    .close .bar2{
+      animation: back-to-normal 0.6s forwards;
+    }
+    .close .bar3{
+      animation: back-to-normal 0.6s forwards;
+    }
+    @keyframes arrow-turn-up {
+      0% {
+        width: 100%;
+      }
+      100% {
+        width: 50%;
+        margin-top: -8px;
+        transform: rotate(45deg);
+      }
+    }
+    @keyframes arrow-turn-short {
+      0% {
+        width: 100%;
+      }
+      100% {
+        width: 80%;
+        margin-left: 1px;
+      }
+    }
+    @keyframes arrow-turn-down {
+      0% {
+        width: 100%;
+      }
+      100% {
+        width: 50%;
+        margin-bottom: -8px;
+        transform: rotate(-45deg);
+      }
+    }
+    #brand {
+      display: flex;
+      justify-content: center;
+      border: 1px solid black;
+    }
+    #brand-name {
+      font-size: 2em;
+      color: chocolate;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const nav = document.querySelector('nav')
+    , menu_btn = document.querySelector('#menu-btn')
+      showNav = ()=>{
+        if(nav.style.display === 'block'){
+          menu_btn.classList.add('close')
+          menu_btn.classList.remove('open')
+          nav.style.display = 'none'
+        }
+        else{
+          menu_btn.classList.remove('close')
+          menu_btn.classList.add('open')
+          nav.style.display = 'block'
+        }
+      }
+      nav.addEventListener('blur', hideNav = ()=>{
+        if(nav.style.display === 'block'){
+          menu_btn.classList.remove('open')
+          menu_btn.classList.add('close')
+          nav.style.display = 'none'
+        }
+      })
+    })
+  </script>
+</head>
+<body id="home">
+  <header>
+    <div id="menu">
+      <button type="button" role="button" id="menu-btn" onclick="showNav()">
+        <span class="bar bar1"></span>
+        <span class="bar bar2"></span>
+        <span class="bar bar3"></span>
+      </button>
+    </div>
+    <div id="brand">
+      <a href="index.html">
+        <div id="brand-name"> ADITYA YADUVANSHI </div>
+      </a>
+    </div>
+    <nav>
+      <div>
+        <ul>
+          <li>
+            <a href="#home"> Home </a>
+          </li>
+          <li>
+            <a href="#skills"> Skills </a>
+          </li>
+          <li>
+            <a href="#projects"> Projects </a>
+          </li>
+          <li>
+            <a href="#about"> About </a>
+          </li>
+          <li>
+            <a href="#contact"> Contact </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <div>
+        <h1> Welcome To ADITYA YADUVANSHI Portfolio Site! </h1>
+        <span> Please Feel Free To Explore This Site </span>
+      </div>
+    </section>
+    <section id="skills">
+      <div>
+        <h2> Skills </h2>
+      </div>
+    </section>
+    <section id="projects">
+      <div>
+        <h2> Projects </h2>
+      </div>
+    </section>
+    <section id="about">
+      <div>
+        <h2> About </h2>
+      </div>
+    </section>
+    <section id="contact">
+      <div>
+        <h2> Contact </h2>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div> &copy; All Rights Reserved! </div>
+  </footer>
+</body>
+</html>
