@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: white;
+      font-size: 16px;
+      font-family: 'Arvo', serif;
+      color: black;
+    }
+    a {
+      text-decoration: none;
+    }
+    header, main, footer {
+      padding: 10px;
+      border: 1px solid black;
+    }
+    section, nav, footer div {
+      padding: 10px;
+      border: 1px solid black;
+    }
+    header, footer {
+      display: grid;
+      align-items: center;
+    }
+    header div {
+      margin: 2px 0 2px 0;
+    }
+    nav {
+      display: none;
+    }
+    nav > div {
+      background: rgb(0,0,0);
+      opacity: 80%;
+    }
+    nav > div ul {
+      list-style: none;
+    }
+    nav > div ul li {
+      display: flex;
+      justify-content: center;
+    }
+    nav > div ul li a {
+      border-bottom: 1px solid white;
+      border-top: 1px solid white;
+      width: 100%;
+      text-align: center;
+      padding: 5px;
+      color: white;
+    }
+    nav > div ul li:hover > a {
+      border-color: white;
+      background: chocolate;
+    }
+    #menu-btn {
+      width: 50px;
+      height: 45px;
+      display: grid;
+      border: 2px solid rgb(100,100,100);
+      align-items: center;
+      border-radius: 5px;
+      padding: 5px;
+    }
+    #menu-btn:hover {
+      border: 2px solid black;
+    }
+    #menu-btn:hover .bar {
+      background: black;
+    }
+    #menu-btn .bar {
+      background: rgb(100,100,100);
+      height: 3px;
+    }
+    .open .bar1{
+      animation: arrow-turn-down 0.6s forwards;
+    }
+    .open .bar2{
+      animation: arrow-turn-short 0.6s forwards;
+    }
+    .open .bar3{
+      animation: arrow-turn-up 0.6s forwards;
+    }
+    .close .bar1{
+      animation: back-to-normal 0.6s forwards;
+    }
+    .close .bar2{
+      animation: back-to-normal 0.6s forwards;
+    }
+    .close .bar3{
+      animation: back-to-normal 0.6s forwards;
+    }
+    @keyframes arrow-turn-up {
+      0% {
+        width: 100%;
+      }
+      100% {
+        width: 50%;
+        margin-top: -8px;
+        transform: rotate(45deg);
+      }
+    }
+    @keyframes arrow-turn-short {
+      0% {
+        width: 100%;
+      }
+      100% {
+        width: 80%;
+        margin-left: 1px;
+      }
+    }
+    @keyframes arrow-turn-down {
+      0% {
+        width: 100%;
+      }
+      100% {
+        width: 50%;
+        margin-bottom: -8px;
+        transform: rotate(-45deg);
+      }
+    }
+    #brand {
+      display: flex;
+      justify-content: center;
+      border: 1px solid black;
+    }
+    #brand-name {
+      font-size: 2em;
+      color: chocolate;
+    }
